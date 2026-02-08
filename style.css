@@ -2,79 +2,73 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Imagen de fondo inicial */
-    background-image: url('ruta/a/tu/fondo_inicial.jpg');
+    font-family: 'Segoe UI', sans-serif;
+    /* Tu fondo inicial */
+    background-image: url('https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1974&auto=format&fit=crop'); /* Puse uno oscuro de ejemplo */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    color: white;
+    height: 100vh;
+    overflow: hidden; /* Evita barras de desplazamiento si no son necesarias */
 }
 
-/* Botón para cambiar fondo */
+/* Botón para cambiar fondo (arriba a la derecha) */
 #change-bg-btn {
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s;
+    font-size: 0.8rem;
 }
 
 #change-bg-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Contenedor de los accesos directos (Grid) */
+/* Contenedor principal: Ahora es invisible y organiza los cuadros */
 .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Se adapta al ancho */
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que bajen si no caben */
+    justify-content: center; /* Centrados en la pantalla */
+    align-content: center;
+    gap: 20px; /* Espacio entre cuadros */
+    height: 100vh;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para el contenedor */
-    border-radius: 15px;
-    backdrop-filter: blur(5px); /* Efecto de desenfoque */
-    max-width: 800px;
-    width: 90%;
+    box-sizing: border-box;
+    /* Quitamos el fondo gris y el borde para que parezcan flotar */
 }
 
-/* Estilo de cada tarjeta/acceso directo */
+/* Estilo de cada CUADRADO (Tarjeta) */
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    transition: transform 0.3s ease;
+    position: relative; /* Necesario para poner el texto encima */
+    width: 150px;  /* Ancho fijo cuadrado */
+    height: 150px; /* Alto fijo cuadrado */
+    border-radius: 10px; /* Bordes un poco redondeados (o quítalo para que sean rectos como tu dibujo) */
+    overflow: hidden; /* Para que la imagen no se salga */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra para que resalten */
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    text-decoration: none; /* Quita el subrayado del link */
 }
 
 .card:hover {
-    transform: scale(1.05); /* Efecto zoom al pasar el mouse */
+    transform: translateY(-5px); /* Se levanta un poco al pasar el mouse */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+    border: 2px solid rgba(255,255,255,0.5); /* Borde brillante al pasar el mouse */
 }
 
-/* Estilo de la imagen dentro de la tarjeta */
+/* La imagen ocupa TODO el cuadrado */
 .card img {
     width: 100%;
-    height: 150px; /* Altura fija para uniformidad */
-    object-fit: cover; /* La imagen cubre el espacio sin deformarse */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    height: 100%;
+    object-fit: cover; /* La imagen llena el cuadro sin deformarse */
 }
 
-/* Estilo de la etiqueta con el nombre */
-.label {
-    margin-top: 10px;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-}
+/* La etiqueta de
