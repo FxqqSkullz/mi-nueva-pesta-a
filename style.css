@@ -71,4 +71,18 @@ body {
     object-fit: cover; /* La imagen llena el cuadro sin deformarse */
 }
 
-/* La etiqueta de
+/* La etiqueta de texto (Instagram, Whatsapp...) */
+.label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9)); /* Degradado oscuro abajo para leer el texto */
+    color: white;
+    text-align: center; /* Texto centrado */
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px black;
+    pointer-events: none; /* El click pasa a través del texto */
+}
