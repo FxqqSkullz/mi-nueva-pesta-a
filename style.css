@@ -3,86 +3,66 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #000; /* Fondo negro por defecto */
-    /* Si quieres imagen de fondo, descomenta la siguiente línea: */
-    /* background-image: url('TU_FONDO_AQUI.jpg'); */
-    background-size: cover;
-    background-position: center;
+    background-color: #000; /* Fondo NEGRO puro */
     height: 100vh;
     overflow: hidden;
 }
 
-/* Botón discreto arriba a la izquierda */
-#change-bg-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    opacity: 0.3; /* Casi invisible hasta que pasas el mouse */
-    background: #333;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: opacity 0.3s;
-}
-#change-bg-btn:hover { opacity: 1; }
-
 /* --- POSICIONAMIENTO --- */
 
-/* La fila horizontal (Arriba izquierda/centro) */
+/* La fila horizontal (Arriba izquierda) */
 .top-row {
     position: absolute;
-    /* CAMBIOS AQUÍ: */
-    top: 5%;   /* Antes 15% -> Lo subimos mucho más */
-    left: 5%;  /* Antes 20% -> Lo pegamos más a la izquierda */
+    top: 5%;
+    left: 5%;
     display: flex;
-    gap: 15px;
-}
-/* La columna vertical (Pegada a la derecha) */
-.side-column {
-    position: absolute;
-    /* CAMBIOS AQUÍ: */
-    top: 5%;     /* Alineado arriba con la otra fila */
-    right: 30%;  /* Antes 5% -> Al aumentar este número, lo empujamos hacia la izquierda */
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    gap: 20px; /* Un poco más de espacio para cuadros grandes */
 }
 
-/* --- ESTILO DE LOS CUADROS (Estilo Streamer) --- */
+/* La columna vertical (A la derecha) */
+.side-column {
+    position: absolute;
+    top: 5%;
+    /* AQUÍ LA MOVEMOS A LA DERECHA */
+    right: 20%; /* Antes 30% -> Al bajar el número, se acerca al borde derecho */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- ESTILO DE LOS CUADROS --- */
 .card {
     position: relative;
-    width: 170px;  /* Tamaño mediano/grande */
-    height: 170px;
-    border-radius: 20px; /* Bordes MUY redondeados */
+    /* AQUÍ LOS AGRANDAMOS */
+    width: 200px;  /* Antes 170px */
+    height: 200px; /* Antes 170px */
+    border-radius: 20px;
     overflow: hidden;
     transition: transform 0.2s;
-    background-color: #1a1a1a; /* Gris oscuro si no carga imagen */
+    background-color: #1a1a1a;
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .card:hover {
-    transform: scale(1.05); /* Zoom suave */
+    transform: scale(1.05);
     filter: brightness(1.1);
 }
 
 .card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* La imagen llena todo el cuadro */
+    object-fit: cover;
 }
 
-/* Texto pequeño en la esquina */
 .label {
     position: absolute;
-    bottom: 8px;
-    left: 10px;
+    bottom: 12px;
+    left: 15px;
     color: white;
-    font-size: 0.75rem; /* Letra pequeña */
+    font-size: 0.9rem; /* Letra un poco más grande */
     font-weight: bold;
     text-transform: uppercase;
-    text-shadow: 1px 1px 3px black; /* Sombra para que se lea */
+    text-shadow: 1px 1px 3px black;
     pointer-events: none;
 }
