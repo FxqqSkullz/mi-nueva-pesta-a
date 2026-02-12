@@ -16,38 +16,35 @@ body {
     top: 5%;
     left: 5%;
     display: flex;
-    gap: 20px; /* Un poco más de espacio para cuadros grandes */
+    gap: 20px; 
 }
 
 /* La columna vertical (A la derecha) */
 .side-column {
     position: absolute;
     top: 5%;
-    /* AQUÍ LA MOVEMOS A LA DERECHA */
-    right: 20%; /* Antes 30% -> Al bajar el número, se acerca al borde derecho */
+    right: 20%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* --- ESTILO DE LOS CUADROS --- */
+/* --- ESTILO DE LOS CUADROS (Rectos y estáticos) --- */
 .card {
     position: relative;
-    /* AQUÍ LOS AGRANDAMOS */
-    width: 200px;  /* Antes 170px */
-    height: 200px; /* Antes 170px */
-    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    /* border-radius eliminado para esquinas rectas */
+    border-radius: 0; 
     overflow: hidden;
-    transition: transform 0.2s;
+    /* transition eliminada para que no haya animación */
     background-color: #1a1a1a;
     text-decoration: none;
+    /* Sombra suave para que no se vean planos del todo */
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-.card:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-}
+/* SE ELIMINÓ EL BLOQUE .card:hover PARA QUE NO SE MUEVAN */
 
 .card img {
     width: 100%;
@@ -60,7 +57,7 @@ body {
     bottom: 12px;
     left: 15px;
     color: white;
-    font-size: 0.9rem; /* Letra un poco más grande */
+    font-size: 0.9rem;
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 1px 1px 3px black;
