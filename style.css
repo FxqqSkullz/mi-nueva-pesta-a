@@ -33,20 +33,21 @@ body {
 /* La fila horizontal (Arriba izquierda/centro) */
 .top-row {
     position: absolute;
-    top: 15%; /* Ajusta esto para subirlo o bajarlo */
-    left: 20%; /* Ajusta esto para moverlo a los lados */
+    /* CAMBIOS AQUÍ: */
+    top: 5%;   /* Antes 15% -> Lo subimos mucho más */
+    left: 5%;  /* Antes 20% -> Lo pegamos más a la izquierda */
     display: flex;
-    gap: 15px; /* Espacio entre cuadros */
+    gap: 15px;
 }
-
 /* La columna vertical (Pegada a la derecha) */
 .side-column {
     position: absolute;
-    top: 15%; /* Alineado con la fila de arriba */
-    right: 5%; /* Pegado al borde derecho */
+    /* CAMBIOS AQUÍ: */
+    top: 5%;     /* Alineado arriba con la otra fila */
+    right: 30%;  /* Antes 5% -> Al aumentar este número, lo empujamos hacia la izquierda */
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espacio entre cuadros */
+    gap: 15px;
 }
 
 /* --- ESTILO DE LOS CUADROS (Estilo Streamer) --- */
